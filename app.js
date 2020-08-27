@@ -12,7 +12,6 @@ const  userRoutes = require('./api/routes/users');
 const  scheduleRoutes = require('./api/routes/schedules');
 const stockRoutes = require('./api/routes/stocks');
 const dispatchRoutes = require('./api/routes/dispatches');
-const productRoutes = require('./api/routes/products');
 
 mongoose.connect('mongodb+srv://sparko:'+ process.env.MONGO_ATLAS_PW +'@cluster0-jsr1k.mongodb.net/test?retryWrites=true&w=majority', {
     useMongoClient: true
@@ -41,7 +40,6 @@ app.use('/users', userRoutes);
 app.use('/schedules', scheduleRoutes);
 app.use('/stocks', stockRoutes);
 app.use('/dispatches', dispatchRoutes);
-app.use('/products', productRoutes);
 
 app.use((req, res, next) => {
     const error = new Error('Not Found');
